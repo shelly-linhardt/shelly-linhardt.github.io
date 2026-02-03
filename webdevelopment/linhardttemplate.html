@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta name="description" content="A new site" />
+                <title>My Starter Template</title>
+
+                <!--
+                    Name: ___
+                    Date: ____
+                    Course: ____
+                    Description: ____
+                -->
+
+                <style>
+            :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+            body{margin:0;padding:1.25rem;background:#fff;color:#111}
+            header{display:flex;gap:1rem;align-items:center}
+            nav a{margin-right:.75rem}
+            #edit-header-btn{position:fixed;right:12px;top:12px;background:#0b5; border:0;padding:8px 10px;border-radius:6px;color:#002;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+            #header-editor{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.35);}
+            #header-editor .panel{width:min(720px,95%);background:#fff;padding:16px;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+            #header-editor label{display:block;margin-top:8px;font-weight:600}
+            #header-editor input,#header-editor textarea{width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:6px}
+            #header-editor .actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+            .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,monospace;background:#f7f7f7;padding:6px;border-radius:6px}
+        </style>
+</head>
+<body>
+        <header>
+                <h1>Welcome</h1>
+                <nav>
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                </nav>
+        </header>
+
+        <main>
+                <section>
+                        <h2>Getting started</h2>
+                        <p>Edit <span class="mono">index.html</span> to begin.</p>
+                </section>
+        </main>
+
+        <footer>
+                <small>&copy; Shelly Linhardt 2026</small>
+        </footer>
+
+        <button id="edit-header-btn" title="Edit header">Edit Header</button>
+
+        <div id="header-editor" aria-hidden="true">
+            <div class="panel" role="dialog" aria-modal="true">
+                <h3>Edit Comment Header</h3>
+                <form id="header-form">
+                    <label for="fld-name">Name</label>
+                    <input id="fld-name" name="name" />
+                    <label for="fld-date">Date</label>
+                    <input id="fld-date" name="date" />
+                    <label for="fld-course">Course</label>
+                    <input id="fld-course" name="course" />
+                    <label for="fld-desc">Description</label>
+                    <textarea id="fld-desc" name="description" rows="3"></textarea>
+                    <div class="actions">
+                        <button type="button" id="btn-cancel">Cancel</button>
+                        <button type="button" id="btn-preview">Preview</button>
+                        <button type="submit" id="btn-save">Save & Download</button>
+                    </div>
+                </form>
+                <pre id="preview" style="white-space:pre-wrap;margin-top:12px;display:none;background:#f3f3f3;padding:8px;border-radius:6px"></pre>
+            </div>
+        </div>
+
+        <script>
+            (function(){
+                const btn = document.getElementById('edit-header-btn');
+                const modal = document.getElementById('header-editor');
+                const form = document.getElementById('header-form');
+                const previewEl = document.getElementById('preview');
+                const fld = {
+                    name: document.getElementById('fld-name'),
+                    date: document.getElementById('fld-date'),
+                    course: document.getElementById('fld-course'),
+                    description: document.getElementById('fld-desc')
+                };
+
+                function findHeaderCommentNode(){
+                    for(const node of document.head.childNodes){
+                        if(node.nodeType===8){
+                            const txt = node.textContent || '';
+                            if(/Name:\s*/i.test(txt) || /Description:\s*/i.test(txt)) return node;
+                        }
+                    }
+                    return null;
+                }
+
+                function parseComment(text){
+                    const lines = text.split(/\r?\n/).map(l=>l.replace(/^\s*/,'').replace(/\s*$/,'')).filter(Boolean);
+                    const out = {name:'',date:'',course:'',description:''};
+                    lines.forEach(line=>{
+                        const m = line.match(/^(Name|Date|Course|Description)\s*:\s*(.*)$/i);
+                        if(m) out[m[1].toLowerCase()] = m[2] || '';
+                    });
+                    return out;
+                }
+
+                function buildComment(obj){
+                    return [
+                        '  Name: ' + (obj.name||''),
+                        '  Date: ' + (obj.date||''),
+                        '  Course: ' + (obj.course||''),
+                        '  Description: ' + (obj.description||'')
+                    ].join('\n');
+                }
+
+                function openEditor(){
+                    const node = findHeaderCommentNode();
+                    let data = {name:'',date:'',course:'',description:''};
+                    if(node) data = parseComment(node.textContent || '');
+                    fld.name.value = data.name;
+                    fld.date.value = data.date;
+                    fld.course.value = data.course;
+                    fld.description.value = data.description;
+                    previewEl.style.display='none';
+                    modal.style.display='flex';
+                    modal.setAttribute('aria-hidden','false');
+                }
+
+                function closeEditor(){
+                    modal.style.display='none';
+                    modal.setAttribute('aria-hidden','true');
+                }
+
+                btn.addEventListener('click', openEditor);
+                document.getElementById('btn-cancel').addEventListener('click', closeEditor);
+
+                document.getElementById('btn-preview').addEventListener('click', ()=>{
+                    const c = buildComment({name:fld.name.value,date:fld.date.value,course:fld.course.value,description:fld.description.value});
+                    previewEl.textContent = '<!--\n'+c+'\n-->';
+                    previewEl.style.display='block';
+                });
+
+                form.addEventListener('submit', function(ev){
+                    ev.preventDefault();
+                    const data = {name:fld.name.value,date:fld.date.value,course:fld.course.value,description:fld.description.value};
+                    const node = findHeaderCommentNode();
+                    const commentText = buildComment(data);
+                    if(node){
+                        node.textContent = '\n'+commentText+'\n    ';
+                    } else {
+                        const c = document.createComment('\n'+commentText+'\n    ');
+                        document.head.insertBefore(c, document.head.firstChild);
+                    }
+
+                    // Build downloadable HTML without the editor UI
+                    const docClone = document.documentElement.cloneNode(true);
+                    // remove editor UI from clone
+                    const headerBtn = docClone.querySelector('#edit-header-btn'); if(headerBtn) headerBtn.remove();
+                    const editor = docClone.querySelector('#header-editor'); if(editor) editor.remove();
+                    const htmlText = '<!doctype html>\n' + docClone.outerHTML;
+
+                    const blob = new Blob([htmlText],{type:'text/html'});
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'index.html';
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    URL.revokeObjectURL(url);
+
+                    closeEditor();
+                });
+            })();
+        </script>
+</body>
+</html>
