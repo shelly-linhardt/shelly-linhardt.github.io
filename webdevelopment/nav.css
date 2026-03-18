@@ -49,10 +49,28 @@ body {
     }
 
 header img {
-    width: auto;
-    height: 100px;
-    border-radius: 50%;
-    border: 1.5px solid #fff;
-    margin: 0;
-    padding: 0;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
     }
+
+.logo-wrapper {
+    background-color: lightgray;
+    width: 140px;
+    height: 55px;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 2.5px solid black;
+    margin-right: 15px;
+    flex-shrink: 0;
+    }
+
+.logo-wrapper img {
+    background-color: lightgray;
+    width: 140px;
+    height: 90px;
+    object-fit: cover;
+    object-position: 50% 0%;
+    margin-top: -10px;
+}
