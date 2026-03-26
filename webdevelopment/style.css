@@ -2,13 +2,14 @@ h1 {
     color: #fff; 
     font-family: 'Oswald', sans-serif; 
     font-size: 1.5rem;
-    margin-right: 3.5rem;
+    text-align: center;
 }
 
 h3 {
     color: #fff; 
     font-family: 'Poppins', sans-serif; 
     font-size: 1.25rem;
+    text-align: center;
     }
 
 p {
@@ -103,7 +104,16 @@ footer {
     border-radius: 3.25rem;
     border: .15rem solid #fff;
     display: flex;/* Removed empty footer ruleset */
+    justify-content: space-between;
+    align-items: center;
     }  
+
+footer p {
+    color: #fff; 
+    font-family: 'Poppins', sans-serif; 
+    font-size: 1rem;
+    margin: 6px 0;
+    }
 
 .credentials {
     margin: 1rem 0;
@@ -136,6 +146,7 @@ section p:first-of-type::first-letter {
     font-variant:small-caps;
     font-family: 'Dancing Script', cursive;
     font-size: 2.5rem;
+    line-height: .7;
     }
 
 section p:nth-of-type(odd) {
@@ -178,3 +189,60 @@ section p:nth-of-type(odd) {
     display: block;
     margin-top: -6rem;
     }
+
+@media print {
+
+    @page {
+        margin: 1in;
+    }
+
+    body {
+        background-color: #000;
+        font-family: "Times New Roman", serif;
+        background: white;
+    }
+
+    body * {
+       display: none !important;
+    }
+
+    main,
+    main > section,
+    .top-row,
+    .profile-text,
+    .credentials-video,
+    nav.credentials,
+    footer {
+        display: block !important;  
+        visibility: visible !important;
+    }
+
+   h1,
+   .profile-text p,
+   nav.credentials ul,
+   nav.credentials ul li,
+    footer p {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .top-row img,
+    video {
+        display: none !important;
+    }
+
+   h1 {
+        font-size: 24px;
+        margin-bottom: 10px
+    }
+
+    .profile-text p,
+    nav.credentials ul {
+        font-size: 14px;
+        margin-bottom: 12px;}
+
+    footer p {
+        margin-top: 20px;
+        font-size: 12px;        
+   }
+ }
