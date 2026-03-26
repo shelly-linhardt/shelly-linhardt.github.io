@@ -190,6 +190,26 @@ section p:nth-of-type(odd) {
     margin-top: -6rem;
     }
 
+.contact-info {
+    display: flex !important;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    }
+
+.contact-info img {
+    width: 2rem;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0) invert(1);
+}
+
+footer p .contact-info{
+    display: flex;
+    align-items: center;
+    }
+
 @media print {
 
     @page {
@@ -204,6 +224,7 @@ section p:nth-of-type(odd) {
 
     body * {
        display: none !important;
+       visibility: hidden !important;
     }
 
     main,
@@ -213,8 +234,12 @@ section p:nth-of-type(odd) {
     .credentials-video,
     nav.credentials,
     footer {
-        display: block !important;  
+        display: block !important;
         visibility: visible !important;
+    }
+
+    footer img {
+        display: none !important;
     }
 
    h1,
@@ -228,21 +253,22 @@ section p:nth-of-type(odd) {
 
     .top-row img,
     video {
-        display: none !important;
+        display: none;
     }
 
    h1 {
-        font-size: 24px;
-        margin-bottom: 10px
+        font-size: 24px !important;
+        margin-bottom: 10px !important;
     }
 
     .profile-text p,
     nav.credentials ul {
-        font-size: 14px;
-        margin-bottom: 12px;}
+        font-size: 14px !important;
+        margin-bottom: 12px !important;
+    }
 
     footer p {
-        margin-top: 20px;
-        font-size: 12px;        
+        margin-top: 20px !important;
+        font-size: 12px !important;       
    }
  }
