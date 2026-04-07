@@ -28,7 +28,7 @@ header {
     width: auto;
     margin-left: auto;
     border: .15rem solid #fff;
-    margin-bottom: 40 px;
+    margin-bottom: 40px;
     }
 
 body {
@@ -49,7 +49,7 @@ body {
     padding: 0;
     justify-content: flex-start;
     align-items: center;
-    gap: .5remx;
+    gap: .5rem;
     margin: 0;
     width: auto;
     }
@@ -363,3 +363,29 @@ form button:hover {
             gap: 15px;
         }
     }
+
+main {
+    background-color: #800000;
+    padding: 15px;
+    border-radius: .625rem;
+    color: #fff; 
+    font-family: 'Poppins', sans-serif; 
+    margin: 20px auto;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    }
+
+@media (min-width: 600px) {
+    .top-row,
+    .credentials-video {
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+        gap: 2rem;  
+        align-items: start;
+    }
+
