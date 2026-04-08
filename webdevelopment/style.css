@@ -87,7 +87,7 @@ body {
     }
 
 .resume {
-    margin-top: 1rem 0;
+    margin-top: 2rem;
     text-align: center;
     }
 
@@ -125,16 +125,21 @@ footer p {
     text-align: center;
     color: #fff; 
     font-family: 'Poppins', sans-serif; 
-    width: 30rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0;
     gap: 3rem;
     }
 
 .credentials-video {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    align-items: start;
     justify-content: space-between;
-    margin-left: 15rem;
-    margin-right: 15rem;
+    margin: 0 auto 6rem auto;
+    width: 100%;
+    max-width: 1200px;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     }
 
 .credentials ul {
@@ -181,17 +186,19 @@ section p:nth-of-type(odd) {
 .top-row {
     display: flex;
     align-items: flex-start;
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: .75rem;
+    margin: 0 auto 2rem auto;
+    width: 100%;
+    max-width: 1200px;
     }
 
 .intro-video {
-    width: 26rem;
-    max-width: 36rem;
+    width: 100%;
+    max-width: 450px;
     border-radius: .625rem;
     border: 0.125rem solid black;
     display: block;
-    margin-top: -6rem;
+    margin-top: 0;
     }
 
 .contact-info {
@@ -366,26 +373,27 @@ form button:hover {
 
 main {
     background-color: #800000;
-    padding: 15px;
+    padding: 1.5rem;
     border-radius: .625rem;
     color: #fff; 
     font-family: 'Poppins', sans-serif; 
-    margin: 20px auto;
-    max-width: 400px;
+    margin: 0 auto;
+    max-width: 1400px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 60px;
     padding-bottom: 40px;
     display: grid;
     gap: 2rem;
+    width: 100%;
     grid-template-columns: 1fr;
     }
 
 @media (min-width: 600px) {
-    .top-row,
-    .credentials-video {
-        grid-template-columns: 1fr 1fr;
-        display: grid;
-        gap: 2rem;  
-        align-items: start;
+        .top-row,
+        .credentials-video {
+            grid-template-columns: 1fr 1fr;
+            display: grid;
+            gap: 2rem;  
+            align-items: start;
+        }
     }
-
