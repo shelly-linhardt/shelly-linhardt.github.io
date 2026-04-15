@@ -79,6 +79,10 @@ nav.resume {
  margin-bottom: 2rem
 }
 
+.hamburger-menu {
+    display: none;
+}
+
 @media (max-width: 768px) {
 
     .primary-navigation {
