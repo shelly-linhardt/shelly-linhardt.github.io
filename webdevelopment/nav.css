@@ -73,3 +73,25 @@ header img {
     object-position: 50% 25%;
     margin-top: 0;
 }
+
+nav.resume {
+ margin-top: 2rem;
+ margin-bottom: 2rem
+}
+
+@media (max-width: 768px) {
+
+    .primary-navigation {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display:block;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .primary-navigation ul {
+        display: none;
+    }
+}   
