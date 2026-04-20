@@ -31,6 +31,10 @@ body {
     width: auto;
     }
 
+.primary-navigation li.mobile-only {
+    display: none;
+}
+
 .primary-navigation a {
     color: #000000;
     text-align: center;
@@ -82,20 +86,3 @@ nav.resume {
 .hamburger-menu {
     display: none;
 }
-
-@media (max-width: 768px) {
-
-    .primary-navigation {
-        display: none;
-    }
-
-    .hamburger-menu {
-        display:block;
-        font-size: 2rem;
-        cursor: pointer;
-    }
-
-    .primary-navigation ul {
-        display: none;
-    }
-}   

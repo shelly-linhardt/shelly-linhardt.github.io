@@ -1,3 +1,10 @@
+/*
+    Name: Shelly Linhardt
+    Date: April 2026
+    Course: ISLT_7355 Portfolio
+    Description: Main stylesheet for portfolio website.
+*/
+
 h1 {
     color: #fff; 
     font-family: 'Oswald', sans-serif; 
@@ -41,6 +48,8 @@ body {
 
 .primary-navigation {
     margin-left: auto;
+    display: flex;
+    align-items: center;
     }    
 
 .primary-navigation ul {
@@ -65,9 +74,13 @@ body {
     border: .15rem solid black;
     }    
 
+.mobile-only {
+    display: none;
+}
+
 .primary-navigation a:hover {
     text-decoration: none;
-    color:#000000
+    color:#000000;
     }
 
 .hero {
@@ -215,11 +228,6 @@ section p:nth-of-type(odd) {
     object-position: center;
     filter: brightness(0) invert(1);
 }
-
-footer p .contact-info{
-    display: flex;
-    align-items: center;
-    }
 
 @media print {
 
@@ -397,3 +405,193 @@ main {
             align-items: start;
         }
     }
+
+/* Three-column layout */
+.three-column-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+/* Style each portfolio item */
+.portfolio-item {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.portfolio-item h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.portfolio-item article {
+    margin-bottom: 1rem;
+}
+
+.portfolio-item figure {
+    margin-top: 1rem;
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 900px) {
+    .three-column-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* === Artifact Layout (Desktop) === */
+.artifact {
+    display: grid; /* grid layout here */
+    grid-template-columns: 1fr 1fr; /* two equal columns */
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+/* Media + text styling */
+.artifact-media img,
+.artifact-media embed {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* === Mobile Layout (max-width: 600px) === */
+@media (max-width: 600px) {
+
+    /* stack content vertically */
+    .three-column-grid {
+        grid-template-columns: 1fr; /* stack vertically */
+        gap: 2rem;
+    }
+
+    /* adjust fonts */
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* resize images */
+    .artifact-media img,
+    .artifact-media embed {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* === Portfolio Anchor Navigation === */
+.portfolio-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.portfolio-nav a {
+    text-decoration: none;
+    background: #f2f2f2;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #333;
+    transition: background 0.2s;
+}
+
+.portfolio-nav a:hover {
+    background: #ddd;
+}
+
+@media (min-width: 900px) {
+    .portfolio-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .primary-navigation li.mobile-only {
+        display: block;
+    }
+   
+    .mobile-only {
+    display: block;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .primary-navigation {
+        display: none; 
+        width: 100%;
+        background-color: #4a4a4a;
+        padding: 1rem 0;
+        border-radius: 10px;
+        margin-top: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .primary-navigation ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 90%;
+        padding: 0;
+        margin: 0 auto;
+        align-items: flex-end;
+    }
+
+    .primary-navigation a {
+        display: block;
+        width: 100%;
+        text-align: right;
+        padding: 1rem;
+    }
+
+    .primary-navigation li.mobile-only a {
+        text-align: right !important;
+        padding: 0.5rem 1rem !important;   
+        font-size: 0.75rem !important;  
+        line-height: 1.1 !important;    
+        background-color: #dcdcdc !important;
+    }
+
+    .primary-navigation li.mobile-only {
+        border-left: 3px solid black;
+        margin-left: 1rem;
+        padding-left: 0.5rem;
+        align-self: flex-end !important;
+        width: auto !important;
+    }
+
+    .portfolio-nav {
+    display: none;
+    }
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #666;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #666;
+}

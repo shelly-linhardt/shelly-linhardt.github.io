@@ -23,19 +23,29 @@
 <body>
 
     <header>  
-        <div class="logo-wrapper">
-            <img src="logo.png" alt="My Logo">
-        </div>
+       <div class="logo-wrapper">
+        <img src="logo.png" alt="My Logo">
+    </div>
 
-     <nav class="primary-navigation">
+    <div class="hamburger-menu">
+         &#9776;
+    </div>
+
+   <nav class="primary-navigation">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="reflection.html">Reflection</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        </nav>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+
+        <li><a href="project.html">Portfolio</a></li>
+        <!-- MOBILE‑ONLY DROPDOWN LINKS UNDER PORTFOLIO -->
+        <li class="mobile-only"><a href="#accessibility-social-media">Accessibility & Social Media</a></li>
+        <li class="mobile-only"><a href="#cataloging-youth">Cataloging for Youth</a></li>
+        <li class="mobile-only"><a href="#technology-blog">Technology Blog</a></li>
+
+        <li><a href="reflection.html">Reflection</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    </nav>
     
     </header>
 
@@ -82,6 +92,14 @@
             Phone: (573) 291-8003
         </p>
     </footer>
+
+    <script>
+    document.querySelector(".hamburger-menu").addEventListener("click", function () {
+    const nav = document.querySelector(".primary-navigation");
+    nav.style.display = nav.style.display === "block" ? "none" : "block";
+    });
+    </script>
+
 
 </body>
 </html>
