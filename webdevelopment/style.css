@@ -632,3 +632,81 @@ a:hover {
 a:visited {
     color: #666;
 }
+
+.style
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none; /* ensures title row has no outer border */
+    font-family: Arial, sans-serif;
+}
+
+/* Title row */
+.table-title {
+    border: none !important;
+    background-color: #800000;
+    color: #fafafa;
+    font-size: 1.3rem;
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+}
+
+/* Remove borders from the title row cells */
+thead tr:first-child th {
+    border: none !important;
+}
+
+/* Column headers (Idea / Description) */
+thead tr:nth-child(2) th {
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    border: 1px solid #999; /* matches your original tbody border color */
+}
+
+tbody td {
+    padding: 10px;
+    border: 1px solid #999;
+    color: #000;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #d9d9d9;
+    color: #000 !important;
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: #800000;
+    color: #fafafa !important; 
+}
+
+/* Footer row */
+tfoot td {
+    background-color: #ddd;
+    font-weight: bold;
+    padding: 10px;
+    border-top: 2px solid #333;
+}
+
+/* Screen-reader-only caption */
+.sr-only {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    table {
+        font-size: 0.9rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    caption {
+        font-size: 1rem;
+    }
+}
