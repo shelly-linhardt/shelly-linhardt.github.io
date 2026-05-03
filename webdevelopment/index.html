@@ -1,29 +1,21 @@
 <!DOCTYPE html>
     <!--
     Name: Shelly Linhardt
-    Date: _____
-    Course: _____
-    Description: _____
+    Date: 5/3/2026
+    Course: IS_LT: 7355
+    Description: Portfolio Website, Index Page
     -->
 
-    <html lang="en-US">
+<html lang="en-US">
 <head>
-    <!-- Character encoding -->
     <meta charset="utf-8">
-
-    <!-- Mobile-friendly scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Page title --></Page>
      <title>Index</title>
 
-    <!-- Custom font used here -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- External stylesheet -->
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="style.css">
-
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 
@@ -39,50 +31,70 @@
 
    <nav class="primary-navigation">
         <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
 
-        <li><a href="project.html">Portfolio</a></li>
+            <li><a href="project.html">Portfolio</a></li>
+            <li class="mobile-only"><a href="#accessibility-social-media">Accessibility & Social Media</a></li>
+            <li class="mobile-only"><a href="#cataloging-youth">Cataloging for Youth</a></li>
+            <li class="mobile-only"><a href="#technology-blog">Technology Blog</a></li>
 
-        <li class="mobile-only"><a href="#accessibility-social-media">Accessibility & Social Media</a></li>
-        <li class="mobile-only"><a href="#cataloging-youth">Cataloging for Youth</a></li>
-        <li class="mobile-only"><a href="#technology-blog">Technology Blog</a></li>
-
-        <li><a href="reflection.html">Reflection</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+            <li><a href="reflection.html">Reflection</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-    </header>
+</header>
 
     <main>
-        <section>
-            <section class="hero">
-                <h1>Welcome To My Portfolio!</h1>
-                <p>I'm an energetic educator exploring innovative ideas to bring creativity and engagement into the library media center.</p>
-                <a href="#">Learn More</a>
-            </section>
-            
-            <h2>Purpose and Goals</h2>
-            <p> As a current classroom teacher, I’m preparing to transition into the library setting within the next few years. This portfolio highlights the projects, ideas, and instructional approaches that reflect my vision for a vibrant student-centered library. From literacy initiatives to technology integration and community building programs, each piece represents my commitment to fostering a love of learning for all students. Thank you for taking the time to explore my work and ideas. I’m excited to continue growing and look forward to implementing these ideas soon. </p>
-            <p> From current trends in literacy to technology integration and community building programs, each piece represents my commitment to foster a love of learning for all students. </p>
-            
-            <section class="quote"></section>
-                <h2>Quote</h2>
-                <blockquote>“Empowering learners through access, inquiry, and imagination.”</blockquote>
-            </section>  
-    
+
+         <section class="hero">
+             <h1>Welcome To My Portfolio!</h1>
+             <p>I'm an energetic educator exploring innovative ideas to bring creativity and engagement into the library media center.</p>
+        </section>
+        
+        <section class="three-column-showcase">
+
+            <div class="column">
+                <h3>Elementary Library Concept</h3>
+                <img src="elementary.png" alt="Elementary Library">
+            </div>
+
+            <div class="column">
+                <img src="secondary.png" alt="Secondary Library">
+                <h3>Secondary Library Concept</h3>
+            </div>
+
+            <div class="column">
+                <h3>Makerspace Concept</h3>
+                <img src="tech.png" alt="Makerspace Concept">
+            </div>
+
         </section>
 
+        <section>
+            <p> As a current classroom teacher, I'm preparing to transition into the library setting within the next few years. This portfolio highlights the projects, ideas, and instructional approaches that reflect my vision for a vibrant student-centered library. From literacy initiatives to technology integration and community building programs, each piece represents my commitment to fostering a love of learning for all students. Thank you for taking the time to explore my work and ideas. I’m excited to continue growing and look forward to implementing these ideas soon. </p>
+            <p> From current trends in literacy to technology integration and community building programs, each piece represents my commitment to foster a love of learning for all students. </p>
+        </section>    
+
+        <section class="quote">
+            <h2>“Empowering learners through access, inquiry, and imagination.”</h2>
+        </section>  
+    
+    </main>
+
+ <p class="ai-credit">Some images on this site were created with the assistance of AI tools.</p>
+ 
  <footer>
     <p>Shelly Linhardt - 2026 </p>
-        <p class="contact-info">
-            <img src="email.png" alt="Email Icon">
-            Email: linhardts@osageschools.org
+        
+    <p class="contact-info">
+        <img src="email.png" alt="Email Icon">
+        Email: linhardts@osageschools.org
         </p>
 
-        <p class="contact-info">
-           <img src="phone.png" alt="Phone Icon">
-            Phone: (573) 291-8003
+    <p class="contact-info">
+        <img src="phone.png" alt="Phone Icon">
+        Phone: (573) 291-8003
         </p>
 
 </footer>
@@ -92,9 +104,7 @@
     const nav = document.querySelector(".primary-navigation");
     nav.style.display = nav.style.display === "block" ? "none" : "block";
     });
-    </script>
-
+</script>
 
 </body>
-
 </html>

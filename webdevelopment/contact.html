@@ -1,33 +1,28 @@
 <!DOCTYPE html>
     <!--
     Name: Shelly Linhardt
-    Date: _____
-    Course: _____
-    Description: _____
+    Date: 5/3/2026
+    Course: IS_LT: 7355
+    Description: Portfolio Website, Contact Page
     -->
 
-    <html lang="en-US">
+<html lang="en-US">
 <head>
-    <!-- Character encoding -->
     <meta charset="utf-8">
-
-    <!-- Mobile-friendly scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <!-- Custom font used here -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Contact</title>
 
-    <!-- External stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="style.css">
-
     <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
    
-    <header>  
-       <div class="logo-wrapper">
+<header>  
+     <div class="logo-wrapper">
         <img src="logo.png" alt="My Logo">
     </div>
 
@@ -37,27 +32,28 @@
 
    <nav class="primary-navigation">
         <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
 
-        <li><a href="project.html">Portfolio</a></li>
-        <!-- MOBILE‑ONLY DROPDOWN LINKS UNDER PORTFOLIO -->
-        <li class="mobile-only"><a href="#accessibility-social-media">Accessibility & Social Media</a></li>
-        <li class="mobile-only"><a href="#cataloging-youth">Cataloging for Youth</a></li>
-        <li class="mobile-only"><a href="#technology-blog">Technology Blog</a></li>
+            <li><a href="project.html">Portfolio</a></li>
+            <li class="mobile-only"><a href="#accessibility-social-media">Accessibility & Social Media</a></li>
+            <li class="mobile-only"><a href="#cataloging-youth">Cataloging for Youth</a></li>
+            <li class="mobile-only"><a href="#technology-blog">Technology Blog</a></li>
 
-        <li><a href="reflection.html">Reflection</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+            <li><a href="reflection.html">Reflection</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
     
-    </header>
+</header>
 
 <main class="contact-section">
     
     <h1>Contact Me</h1>
 
-    <form action="#" method="post">
+    <div class="contact-layout">
+        
+        <form action="#" method="post">
 
         <label for="title">Title:</label>
         <select id="title" name="title" required>
@@ -103,11 +99,19 @@
         <button type="submit">Send Message</button>
     </form>
 
+    <img src="bookheart.png" 
+         alt="Books" 
+         class="contact-image">
+    </div>
+
 </main>
+
+<p class="ai-credit">Some images on this site were created with the assistance of AI tools.</p>
 
 <footer>
        <p>Shelly Linhardt - 2026 </p>
-        <p class="contact-info">
+        
+       <p class="contact-info">
             <img src="email.png" alt="Email Icon">
             Email: linhardts@osageschools.org
         </p>
@@ -123,4 +127,7 @@
     const nav = document.querySelector(".primary-navigation");
     nav.style.display = nav.style.display === "block" ? "none" : "block";
     });
-    </script>
+</script>
+
+</body>
+</html>
