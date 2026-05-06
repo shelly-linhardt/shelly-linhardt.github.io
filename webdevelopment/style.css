@@ -631,18 +631,18 @@ main {
 }
 
 a {
-    color: #666;
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
 }
 
 a:hover {
-    color: #666;
+    color: #fff;
     text-decoration: underline;
 }
 
 a:visited {
-    color: #666;
+    color: #fff;
 }
 
 .style
@@ -800,4 +800,9 @@ tfoot td {
     max-width: 600px;
     margin: 0;
     flex: 1;
+}
+
+footer p,
+footer .copyright {
+    color: red;
 }
